@@ -1,4 +1,4 @@
-# Galery Templates
+# Notepad
 
 This repository if for a test by IDEAFLIX.
 In that case, I'm reproducing notepads, for working with title and description.

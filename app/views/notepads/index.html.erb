@@ -1,0 +1,27 @@
+<div class="div-index">
+  <p id="notice"><%= notice %></p>
+
+  <%= form_for :notepad, url: notepads_path, :method => 'get' do |f| %>
+    <p>
+      <%= f.text_field :search, value: params.dig(:notepad, :search) %>
+      <%= f.submit 'Pesquisar' %>
+      <%= link_to 'Voltar', notepads_path, class: 'btn btn-dark' %>
+    </p>
+  <% end %>
+
+  <% @notepads.each do |notepad| %>
+  <div class="card mb-3" style="width: 20rem;">
+    <div class="card-body">
+        <h5 class="card-title"><%= notepad.title %></h5>
+        <p class="card-text"><%= notepad.description %></p>
+        <a href="#" class="card-link"><%= link_to 'Mostrar', notepad, class: 'btn btn-secondary' %></a>
+        <a href="#" class="card-link"><%= link_to 'Editar', edit_notepad_path(notepad), class: 'btn btn-dark' %></a>
+        <a href="#" class="card-link"><%= link_to 'Excluir', notepad, method: :delete, data: { confirm: 'Tem certeza?' }, class: 'btn btn-danger' %></a>
+        <br/>
+    </div>
+    <br/>
+  </div>
+  <br/>
+  <% end %>
+  <br/>
+</div>

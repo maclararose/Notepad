@@ -1,0 +1,28 @@
+<%= form_with(model: notepad) do |form| %>
+  <% if notepad.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(notepad.errors.count, "error") %> prohibited this notepad from being saved:</h2>
+
+      <ul>
+        <% notepad.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="ml-3 mr-3">
+  <form>
+    <div class="field form-group">
+      <%= form.text_field :title, class: 'form-control', placeholder: 'Título' %>
+    </div>
+    <div class="field form-group">
+      <%= form.text_area :description, class: 'form-control', placeholder: 'Descrição...' %>
+    </div>
+
+    <div class="actions">
+      <%= form.submit class: 'btn btn-secondary'%>
+    </div>
+  </form>
+<% end %>
+<br/>
+</div>

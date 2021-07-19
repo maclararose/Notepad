@@ -1,0 +1,12 @@
+<h1>Nota</h1>
+<br/>
+<div class="card text-center">
+  <div class="card-header"></div>
+  <div class="card-body">
+    <h5 class="card-title"><h4><%= @notepad.title %></h4></h5>
+    <p class="card-text"><%= @notepad.description %></p>
+    <a href="#" class="card-link"><%= link_to 'Editar', edit_notepad_path(@notepad), class: 'btn btn-secondary' %></a>
+    <a href="#" class="card-link"><%= link_to 'Voltar', notepads_path, class: 'btn btn-dark' %></a>
+  </div>
+  <div class="card-footer text-muted"></div>
+</div>

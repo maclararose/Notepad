@@ -1,0 +1,2 @@
+class Notepad < ApplicationRecord
+end
